@@ -1,0 +1,20 @@
+{
+  "name": "Go with PostgreSQL DevContainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations" : {
+    "extensions": [
+      "golang.go",   // Go 扩展
+      "ms-azuretools.vscode-docker"   // Docker 扩展
+    ],
+    "settings": {
+      "go.gopath": "/go",
+      "go.useLanguageServer": true,
+      "go.toolsManagement.autoUpdate": true
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/,target=/workspace,type=bind"  // 挂载本地工作目录
+  ]
+}
